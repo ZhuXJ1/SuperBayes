@@ -8,7 +8,7 @@ import os
 import bilby
 import pandas as pd
 
-outdir = '/fred/oz008/xzhu/projects/SuperBayes/PG1302/red_sine'
+outdir = '/fred/oz008/xzhu/projects/SuperBayes/PG1302/'
 if not os.path.exists(outdir):
     os.makedirs(outdir)
 label = 'red_sin_CAL'

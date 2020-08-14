@@ -41,7 +41,7 @@ priors['PHI'] = bilby.core.prior.Uniform(0, 2*np.pi, periodic_boundary=True, nam
 priors['T0'] = bilby.core.prior.Uniform(0, 10, name='T0', latex_label='$T_{0}$ [yr]')
 priors['logCC'] = bilby.core.prior.Uniform(-6, 0, name='logCC', latex_label='$\\ln \\hat{\\sigma}^2$ [mag$^2$ yr$^{-1}$]')
 priors['logTAU0'] = bilby.core.prior.Uniform(-4, 4, name='logTAU0', latex_label='$\\ln \\tau_{0}$ [yr]')
-priors['gamma'] = bilby.core.prior.Uniform(0, 2, name='gamma', latex_label='$\\gamma$')
+priors['gamma'] = bilby.core.prior.Uniform(0, 1.8, name='gamma', latex_label='$\\gamma$')
 
 for flag in flags:
     priors['NU-'+flag] = bilby.core.prior.Uniform(0.1, 2.0, name='NU-'+flag, latex_label='$\\nu_{\\textrm{'+flag+'}}$')

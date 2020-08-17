@@ -1,6 +1,8 @@
 # SuperBayes
 Bayesian periodicity search in quasar/AGN light curves as a way to identify candidates of Supermassive binary black holes
 
+This repository contains free codes, which come with absolutely no warranty. However, if you would like to use them and need help, please feel free to get in touch.
+
 Codes and data that accompany the paper "Toward the unambiguous identification of supermassive binary black holes through Bayesian inference
 " (https://arxiv.org/abs/2004.10944), by Xing-Jiang Zhu & Eric Thrane.
 
@@ -15,4 +17,3 @@ A hack to solve the above error is to add the second line below.
     def __init__(self, data, parameters):
         self._marginalized_parameters = []
         
-

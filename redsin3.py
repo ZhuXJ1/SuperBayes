@@ -8,7 +8,7 @@ import os
 import bilby
 import pandas as pd
 
-outdir = '/fred/oz008/xzhu/projects/SuperBayes/PG1302/'
+outdir = './PG1302'
 if not os.path.exists(outdir):
     os.makedirs(outdir)
 label = 'red_sin_CAL'
@@ -121,8 +121,8 @@ result = bilby.run_sampler(
     sampler="dynesty",
     resume=False,
     npoints=1000,
-    dlogz=0.1,
-    walks=30,
+    dlogz=1,
+    walks=10,
     outdir=outdir,
     label=label,
     plot=True,

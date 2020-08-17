@@ -8,7 +8,7 @@ import os
 import bilby
 import pandas as pd
 
-outdir = '/fred/oz008/xzhu/projects/SuperBayes/PG1302/'
+outdir = './PG1302'
 if not os.path.exists(outdir):
     os.makedirs(outdir)
 label = 'red_qpo_CAL'
@@ -36,9 +36,6 @@ data.sort_values(by=['MJD']);
 #main_flag = pd.unique(data['Flag'])[0]
 
 priors = dict()
-#priors['A'] = bilby.core.prior.Uniform(0, 0.8, 'A')
-#priors['PHI'] = bilby.core.prior.Uniform(0, 2*np.pi, 'PHI')
-#priors['T0'] = bilby.core.prior.Uniform(0, 10, 'T0')
 priors['logCC'] = bilby.core.prior.Uniform(-6, 0, name='logCC', latex_label='$\\ln \\hat{\\sigma}^2$ [mag$^2$ yr$^{-1}$]')
 priors['logTAU0'] = bilby.core.prior.Uniform(-4, 4, name='logTAU0', latex_label='$\\ln \\tau_{0}$ [yr]')
 priors['gamma'] = bilby.core.prior.Uniform(0, 1.8, name='gamma', latex_label='$\\gamma$')
@@ -121,8 +118,8 @@ result = bilby.run_sampler(
     sampler="dynesty",
     resume=False,
     npoints=1000,
-    dlogz=0.1,
-    walks=30,
+    dlogz=1,
+    walks=10,
     outdir=outdir,
     label=label,
     plot=True,
